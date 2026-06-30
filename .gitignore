@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+envproj/
+
+# Ruff
+.ruff_cache/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+uploads/          # 用户上传的临时 PDF
+outputs/          # OCR 输出结果
+models/           # OCR 模型文件(运行时下载)
+
+# Docker
+*.log
+
+# Environment
+.env
+.env.*
+!.env.example

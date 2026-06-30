@@ -1,0 +1,25 @@
+services:
+  d_ocr:
+    build:
+      context: .
+      args:
+        PIP_INDEX_URL: ${PIP_INDEX_URL:-https://pypi.org/simple}
+    image: d_ocr:latest
+    container_name: d_ocr
+    ports:
+      - "${PORT:-8000}:8000"
+    volumes:
+      - uploads_data:/app/uploads
+      - outputs_data:/app/outputs
+      - models_data:/app/paddleocr_models
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  uploads_data:
+  outputs_data:
+  models_data:

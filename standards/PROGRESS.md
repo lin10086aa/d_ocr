@@ -8,10 +8,10 @@
 
 ## 当前状态 (最后更新: 2026-06-30 · by AI)
 
-- **阶段**:`初始化` — 对应 06 六步流程第 ① 步 ✅ 已完成，下一步进入第 ② 步
-- **上一步完成**:创建 GitHub 仓库 `lin10086aa/d_ocr`，推送最小引导提交(.gitignore + standards/ + README)
-- **下一步 (TODO 第一条)**:第 ② 步 — 从 main 开 `feature/1-project-init` 分支，搭建项目工程骨架
-- **阻塞项**:等待人类确认第 ① 步结果，确认后开 feature 分支
+- **阶段**:`开发中` — 对应 06 六步流程第 ③/④ 步 ✅ 已完成，下一步进入第 ⑤ 步(PR)
+- **上一步完成**:在 `feature/1-project-init` 分支完成工程骨架搭建 + 本地 CI 全绿
+- **下一步 (TODO 第一条)**:第 ⑤ 步 — 推送分支、`gh pr create`、等 CI 全绿
+- **阻塞项**:等待人类确认第 ③/④ 步结果，确认后推送 PR
 - **调整**:本轮跳过 CD 部署（无服务器），保留 CI 验证；不配 SSH Secrets
 
 ---
@@ -26,14 +26,14 @@
 
 ### 阶段 1: 工程骨架 + CI(US-1)
 
-- [ ] 第②步:从 `main` 开 feature 分支 `feature/1-project-init`
-- [ ] 搭建 Python 项目骨架:`backend/`、`tests/`、`requirements.txt`、`requirements-dev.txt`
-- [ ] 配置 ruff(pyproject.toml)
-- [ ] 编写 FastAPI 最小应用(`/health` 端点)
-- [ ] 编写 Dockerfile + docker-compose.yml
-- [ ] 编写 CI workflow(`.github/workflows/ci.yml`)(不含 CD)
-- [ ] 编写健康检查测试
-- [ ] 第④步:本地 CI 自检(ruff + pytest + 覆盖率)
+- [x] 第②步:从 `main` 开 feature 分支 `feature/1-project-init` ✅
+- [x] 搭建 Python 项目骨架:`backend/`、`tests/`、`requirements.txt`、`requirements-dev.txt` ✅
+- [x] 配置 ruff(pyproject.toml) ✅
+- [x] 编写 FastAPI 最小应用(`/health` 端点) ✅
+- [x] 编写 Dockerfile + docker-compose.yml ✅
+- [x] 编写 CI workflow(`.github/workflows/ci.yml`)(不含 CD) ✅
+- [x] 编写健康检查测试(`tests/test_health.py`) ✅
+- [x] 第④步:本地 CI 自检(ruff + pytest + 覆盖率 100%) ✅
 - [ ] 第⑤步:推送分支、创建 PR、等 CI 全绿
 - [ ] 第⑥步:人工合并(无 CD 部署)
 

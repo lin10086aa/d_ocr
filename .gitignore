@@ -43,3 +43,9 @@ models/           # OCR 模型文件(运行时下载)
 .env
 .env.*
 !.env.example
+
+# Template (not part of the project)
+standards-template1/
+
+# Claude Code
+.claude/

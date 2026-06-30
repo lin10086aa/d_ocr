@@ -8,12 +8,11 @@
 
 ## 当前状态 (最后更新: 2026-06-30 · by AI)
 
-- **阶段**:`初始化` — 对应 06 六步流程第 ① 步:建仓 + 配 Secrets
-- **上一步完成**:已填写 `00-project-context.md` 和 `01-requirements.md`,初始化本 PROGRESS.md。
-- **下一步 (TODO 第一条)**:
-  1. **人类确认**:审阅 `00`/`01`/`PROGRESS` 三个文件,确认需求无误后进入第 ① 步。
-  2. 第 ① 步:创建 GitHub 仓库 → 配置 Secrets → 推送初始工程骨架。
-- **阻塞项**:等待人类确认三个 standards 文件。
+- **阶段**:`初始化` — 对应 06 六步流程第 ① 步 ✅ 已完成，下一步进入第 ② 步
+- **上一步完成**:创建 GitHub 仓库 `lin10086aa/d_ocr`，推送最小引导提交(.gitignore + standards/ + README)
+- **下一步 (TODO 第一条)**:第 ② 步 — 从 main 开 `feature/1-project-init` 分支，搭建项目工程骨架
+- **阻塞项**:等待人类确认第 ① 步结果，确认后开 feature 分支
+- **调整**:本轮跳过 CD 部署（无服务器），保留 CI 验证；不配 SSH Secrets
 
 ---
 
@@ -21,23 +20,22 @@
 
 ### 阶段 0: 项目初始化(当前)
 
-- [ ] **人类确认 standards 目录内容** ← 当前卡点
-- [ ] 第①步:创建 GitHub 仓库(`d_ocr`),推送最小引导提交(.gitignore/README)
-- [ ] 第①步:提示人类配置 GitHub Secrets(`SSH_PRIVATE_KEY`/`SSH_HOST`/`SSH_USER`)
+- [x] **人类确认 standards 目录内容** ✅
+- [x] 第①步:创建 GitHub 仓库(`lin10086aa/d_ocr`),推送最小引导提交(.gitignore/README) ✅
+- [x] 第①步:跳过 Secrets(本轮无 CD),保留 CI 验证 ✅
 
-### 阶段 1: 工程骨架 + CI/CD(US-1)
+### 阶段 1: 工程骨架 + CI(US-1)
 
 - [ ] 第②步:从 `main` 开 feature 分支 `feature/1-project-init`
 - [ ] 搭建 Python 项目骨架:`backend/`、`tests/`、`requirements.txt`、`requirements-dev.txt`
 - [ ] 配置 ruff(pyproject.toml)
 - [ ] 编写 FastAPI 最小应用(`/health` 端点)
 - [ ] 编写 Dockerfile + docker-compose.yml
-- [ ] 编写 CI workflow(`.github/workflows/ci.yml`)
-- [ ] 编写 CD workflow(`.github/workflows/cd.yml`)
+- [ ] 编写 CI workflow(`.github/workflows/ci.yml`)(不含 CD)
 - [ ] 编写健康检查测试
 - [ ] 第④步:本地 CI 自检(ruff + pytest + 覆盖率)
 - [ ] 第⑤步:推送分支、创建 PR、等 CI 全绿
-- [ ] 第⑥步:人工合并后验证 CD 部署 + `/health`
+- [ ] 第⑥步:人工合并(无 CD 部署)
 
 ### 阶段 2: OCR 核心能力(US-3)
 
